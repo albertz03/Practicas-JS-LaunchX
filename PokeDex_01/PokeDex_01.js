@@ -41,6 +41,7 @@ const renderPokemonData = data => {
     pokeName.textContent = data.name;
     pokeImg.setAttribute('src', sprite);
     pokeId.textContent = `Nº ${data.id}`;
+    pokeImg.style.borderRadius='50%';
     setCardColor(types);
     renderPokemonTypes(types);
     renderPokemonStats(stats);
@@ -58,7 +59,8 @@ const renderPokemonTypes = types => {
     pokeTypes.innerHTML = '';
     types.forEach(type => {
         const typeTextElement = document.createElement("div");
-        typeTextElement.style.color = typeColors[type.type.name];
+        /* typeTextElement.style.color = typeColors[type.type.name]; */
+        typeTextElement.style.backgroundColor = typeColors[type.type.name];
         typeTextElement.textContent = type.type.name;
         pokeTypes.appendChild(typeTextElement);
     });
@@ -81,6 +83,7 @@ const renderPokemonStats = stats => {
 const renderNotFound = () => {
     pokeName.textContent = 'No encontrado';
     pokeImg.setAttribute('src', 'missingno.png');
+    pokeImg.style.borderRadius='0%';
     pokeImg.style.background =  '#fff';
     pokeTypes.innerHTML = '';
     pokeStats.innerHTML = '';
