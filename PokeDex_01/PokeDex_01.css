@@ -24,14 +24,14 @@ input {
 
 .poke-card::before {
     content: '';
-    background: radial-gradient(black 33%, transparent 33%);
+    background: radial-gradient(black 40%, transparent 33%);
     background-size: 3px 3px;
     border-radius: 4px;
     height: 100%;
     width: 100%;
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 15px;
+    top: 15px;
     z-index: -1;
 }
 
@@ -58,12 +58,16 @@ input {
     text-shadow: 0 0px 3px rgba(0, 0, 0, 1);
     color: #FFF;
 }
+.pokeinput{
+    text-align: center;
+}
 
 .poke-img {
     width: 180px;
     border-radius: 50%;
 }
 body {
-    background: radial-gradient(black 33%, red 33%);
+    background: radial-gradient(rgb(160, 0, 0) 66%, red 33%);
     background-size: 3px 3px;
+    
 }
