@@ -4,8 +4,10 @@ form {
 }
 
 input {
+ 
     width: 100%;
     padding: 10px;
+
 }
 
 .poke-card {
@@ -17,12 +19,14 @@ input {
     color: #000;
     text-align: center;
     padding: 10px;
-    margin: 0 auto;
-    background-color: #FFF;
+    margin: -25px auto;
+    background-color: rgb(254, 255, 245);
     border: 1px solid black;
+    animation: animate 5s linear infinite;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1);
 }
 
-.poke-card::before {
+/* .poke-card::before {
     content: '';
     background: radial-gradient(black 40%, transparent 33%);
     background-size: 3px 3px;
@@ -33,6 +37,16 @@ input {
     left: 15px;
     top: 15px;
     z-index: -1;
+    } */
+
+@keyframes animate {
+    0%,
+    100% {
+      transform: translateY(20px);
+    }
+    50% {
+      transform: translateY(50px);
+    }
 }
 
 .img-container {
@@ -71,3 +85,135 @@ body {
     background-size: 3px 3px;
     
 }
+/*
+ * POKEBALL 
+ */
+
+/* animation frame! rotation movement of the pokeball */
+@-webkit-keyframes spinning {
+    0% {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+    50% {
+      transform: rotate(325deg);
+      -webkit-transform: rotate(325deg);
+    }
+    100% {
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+  }
+  
+  @-webkit-keyframes translating {
+    0% {
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+    }
+    50% {
+      transform: translateX(50%);
+      -webkit-transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+    }
+  }
+  
+  @-webkit-keyframes color-change {
+      0%, 20%, 40%, 60%, 100% {
+          background-color: #fff;
+      }
+      10%, 30%, 50%, 70%, 90% {
+          background-color: #f00;
+      }
+  }
+  
+  * {
+      margin: 0;
+      padding: 0;
+  }
+  
+  body {
+      background-color: #f5f5f5;
+  }
+  
+  #Pokebola {
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      position: relative;
+      top: 60px;
+      background: radial-gradient(rgb(27, 94, 0) 66%, rgb(0, 184, 9) 33%);
+    background-size: 3px 3px;
+  }
+  
+  #Pokebola  #moving-container {
+      width: 10em;
+      height: 10em;
+      margin: 10px auto 70px;
+      position: relative;
+      -webkit-animation: translating 5s infinite;
+  }
+  /* pokeball container */
+  #Pokebola  #pokeball-container {
+      width: 10em;
+      height: 10em;
+      margin: 20px auto;
+        -webkit-animation: spinning 5s infinite;
+  }
+  
+  #Pokebola  #pokeball { 
+      width: 10em;
+      height: 10em;
+      background-color: #fff;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  #Pokebola  #pokeball::before {
+      content: '';
+      background-color: red;
+      border-radius: 5em 5em 0 0;
+      width: 10em;
+      height: 5em;
+      position: absolute;
+  }
+  
+  #Pokebola  #pokeball .pokeball-details {
+      width: 10em;
+      height: 1em;
+      background-color: #333;
+      position: absolute;
+      top: 4.5em;
+  }
+  
+  
+  /* the pokemon's button or whatever it is */
+  #Pokebola  #pokeball .pokeball-details::before {
+      content: '';
+      width: 3.5em;
+      height: 3.5em;
+      border-radius: 50%;
+      background-color: #333;
+      position: absolute;
+      top: -1.25em;
+      left: 3.25em;
+      z-index: 200;
+  }
+  
+  #Pokebola  #pokeball .pokeball-details::after {
+      content: '';
+      width: 1.8em;
+      height: 1.8em;
+      border: 0.3em solid white;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: -0.65em;
+      left: 3.80em;
+      margin: 0 auto;
+      z-index: 250;
+      -webkit-animation: color-change 3s infinite;
+  }

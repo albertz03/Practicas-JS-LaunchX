@@ -34,7 +34,7 @@ const searchPokemon = (event) => {
     pokeImg.style.borderRadius = "50%";
     pokeImg.style.background = "#fff";
     pokeTypes.innerHTML = "El topo es el topo";
-    pokeStats.innerHTML = "y al topo se la pelas";
+    pokeStats.innerHTML = "";
     pokeId.textContent = "N° topo ";
     console.log("topo rules");}
     else{
@@ -100,7 +100,7 @@ const renderNotFound = () => {
   pokeImg.style.background = "#fff";
   pokeTypes.innerHTML = "";
   pokeStats.innerHTML = "";
-  pokeId.textContent = "";
+  pokeId.textContent = "MissingNo.";
   
 };
 
